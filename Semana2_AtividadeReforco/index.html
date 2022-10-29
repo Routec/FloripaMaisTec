@@ -1,0 +1,170 @@
+<!--
+    Vamos começar o desenvolvimento de uma calculadora para aplicar o conhecimento adquirido durante o curso. Crie um documento HTML com a seguinte estrutura:
+Um título h1 com o nome da sua calculadora
+Um pequeno parágrafo descrevendo seu projeto (use sua criatividade!)
+Uma lista ordenada com o passo-a-passo para usar a sua calculadora
+Dois elementos input do tipo número
+Um elemento select com as opções sendo as principais operações matemáticas
+Um botão para realizar o cálculo
+Um parágrafo com os dizeres “O resultado da operação é:”. Posteriormente usaremos JavaScript para inserir o valor neste parágrafo.
+Obs. Não se preocupe com estilos e funcionalidades neste momento.
+
+Uma empresa de eventos está montando um programa para realizar a distribuição dos convidados em setores de acordo com os dados abaixo:
+Menores de 14 anos: setor amarelo
+Maiores de 14 anos e menores de 18 anos: setor azul
+Maiores de 18 anos e menores de 25 anos: setor branco
+Maiores de 25 anos: setor verde
+Construa a estrutura condicional para que essa verificação seja realizada, utilizando os operadores lógicos estudados. Utilize o console.log para exibir o nome do setor para cada grupo de idade.
+
+Para praticarmos a escrita de operações aritméticas, pense em 2 números distintos entre 1 e 20. Salve estes números em variáveis e, em seguida, escreva todas as operações aritméticas que estudamos entre eles, sempre utilizando dois números de cada vez. Exiba o resultado de cada operação em um console.log. Lembrando que as operações aritméticas são:
+soma
+subtração
+divisão
+multiplicação
+exponenciação
+resto
+
+Descreva, com suas palavras, o que é uma concatenação de strings. Em seguida, declare duas variáveis e atribua à elas algum valor de texto (por exemplo, seu nome e sobrenome). Para finalizar, declare uma terceira variável que receba o resultado da concatenação das duas primeiras variáveis.
+-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Simples</title>
+    <script type="text/javascript" src="setor.js"></script>
+    <link rel="stylesheet" href="stylo.css">
+      
+</head>
+
+<body class="conteudo">
+
+    <header class="linha">
+        <section class="linha">
+        <img src="./calculator-icon-android-6.jpg" alt="Logotipo Calculadora" width="50">
+                <h1>Atividades Propostas<br> <b>Semana 2</b></h1>
+                <nav class="">
+                    <ul class="botao">
+                        <li class="">
+                            <a  href="#primeira">1° Tarefa</a>
+                            <a href="#segunda">2° Tarefa</a>
+                            <a href="#terceira">3° Tarefa</a>
+                            <a href="#quarta">4° Tarefa</a>
+                        </li>
+                    </ul>
+                </nav>
+        </section>
+    </header>
+
+
+    <main class="sobre"><br><br>
+        <section class="sobre">
+            <fieldset class="agrupamento" id="primeira">
+                <legend>Primeira Tarefa</legend>
+                <h2>Calculadora Simples</h2>
+            <!--Descrição da calculadora-->
+                <h3>Esta calculadora fornece as mais simples operações matemáticas.</h3>
+                <p><strong>Para utilização, siga os passos a seguir:</strong> </p>
+                <ol>
+                    <li>Insira o primeiro valor no Campo 1</li>
+                    <li>Insira o segundo valor no Campo 2</li>
+                    <li>selecione a operação matemática desejada</li>
+                    <li>Obtenha o resultado em "O resultado da operação é:"</li>
+                </ol><br>
+            
+            <!--Entrada dos dados para calcular-->
+                <div class="form-group">
+                    <input type="number" id="campo_1" class="entrada" required><br><br>
+                    <span>Campo 1</span>
+                </div><br>
+                <div class="form-group">
+                    <input type="number" id="campo_2" class="entrada" required><br><br>
+                    <span>Campo 2</span>
+                </div>
+                
+                <select class="operacao" name="" id="operacao">
+                    <option value="selecione">Selecione uma operação matemática</option>
+                    <option value="soma">Soma</option>
+                    <option value="subtracao">Subtração</option>
+                    <option value="multiplicacao">Multiplicação</option>
+                    <option value="divisao">Divisão</option>
+                    <option value="exponenciacao">Exponenciação</option>
+                    <option value="resto">Resto</option>
+                </select><br><br>
+        
+            <!--Chamando a função calculadora e exibe o resultado-->
+                <button type="button" class="entrada-bot" onclick="calcular()">Calcular</button><br><br>
+                <label for="#" id="#" class="rotulo"><strong>O resultado da operação é:</strong></label>
+                <h3 id="resultado"></h3>
+            </fieldset><br>
+            
+            <fieldset class="agrupamento" id="segunda">
+                <legend>Segunda Tarefa</legend>
+            <!--Tarefa distribuição de convidados-->
+                <h2><strong>Distribuição dos convidados por setor</strong></h2><br>
+                <div class="form-group">
+                    <input type="number" id="idade" size="15" class="entrada" required>
+                    <span>Digite sua idade</span>
+                </div><br>
+
+                
+                <button type="button" class="entrada-bot" onclick="setor()">Verificar Setor</button><br><br>
+                
+                <label for="#" class="rotulo"><strong>Seu setor é:</strong></label>
+                <h3 id="setor"></h3>
+            </fieldset><br>
+        
+            <!--Terceira Tarefa-->
+            <fieldset class="agrupamento" id="terceira">
+                <legend>Terceira Tarefa</legend>
+                <h2>Operações Aritméticas</h2>
+                <p>Clique nas operações abaixo para obter o resultado entre os números <b>13</b> e <b>7</b> conforme a opção clicada:</p>
+                <ul>
+                    <li onclick="som()">Soma</li>
+                    <li onclick="sub()">Subtração</li>
+                    <li onclick="mul()">Multiplicação</li>
+                    <li onclick="div()">Divisão</li>
+                    <li onclick="exp()">Exponenciação</li>
+                    <li onclick="res()">Resto</li>
+                </ul>
+                <h3 id="opar"></h3>
+            </fieldset><br>
+                
+            <fieldset id="quarta">
+                <legend>Quarta Tarefa</legend>
+            <!--Concatenação-->
+            <h2><strong>Concatenação</strong></h2>
+                <p>A concatenação é a união entre dois termos, formando um só. Um exemplo é dado a seguir,<br> onde concatenaremos o valor digitado em "nome" com o valor digitado em "sobrenome"<br> resultando um novo valor, separado ou não por espaço, conforme configuração do código.</p><br>
+
+                <div class="form-group">
+                    <input type="text" id="nome" class="entrada" required>
+                    <span>Digite seu nome</span>
+                </div><br><br> 
+                <div class="form-group">
+                    <input type="text" id="sobrenome" class="entrada" required>
+                    <span>Digite seu sobrenome</span>
+                </div><br>        
+
+                <button type="button" class="entrada-bot" onclick="concatenar()">Concatenar</button><br><br>
+                
+                
+                <label for="" class="rotulo"><strong>Seu nome completo é:</strong></label>
+                <h3 id="nomeCompleto"></h3>
+
+            </fieldset>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+
+    </footer>
+
+    
+    
+</body>
+
+</html>
